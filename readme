@@ -1,0 +1,7 @@
+TODO: Add a list of the required programs for this config to work.
+
+So far:
+
+-clangd
+-gcc (or any c/c++ compiler, I think)
+-git
