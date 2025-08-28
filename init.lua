@@ -1,5 +1,8 @@
 require("config.lazy")
 
+vim.lsp.enable("clangd")
+vim.diagnostic.config({virtual_text=true})
+
 local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require("lspconfig")
@@ -117,6 +120,8 @@ vim.keymap.set("v", "<leader>{", "di{}<Esc>p")
 vim.keymap.set("v", "<leader>[", "di[]<Esc>p")
 vim.keymap.set("v", "<leader>\"", "di\"\"<Esc>p")
 vim.keymap.set("v", "<leader>'", "di''<Esc>p")
+
+vim.keymap.set("n", "<leader>ss", ":ClangdSwitchSourceHeader<Enter>")
 
 vim.opt.expandtab = false
 vim.opt.softtabstop = 0
