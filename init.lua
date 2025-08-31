@@ -106,6 +106,11 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "{", "[[zz")
 vim.keymap.set("n", "}", "]]zz")
 
+--LSP diagnostics
+-- Doesn't work. Ideally, [d should just execute the usual [d, but with an extra zz to center
+-- it, but it doesn't work. I think it unbinds the default.
+--vim.keymap.set("n", "[d", "[dzz", {remap = false})
+--vim.keymap.set("n", "]d", "]dzz", {remap = false})
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
@@ -120,6 +125,10 @@ vim.keymap.set("v", "<leader>{", "di{}<Esc>p")
 vim.keymap.set("v", "<leader>[", "di[]<Esc>p")
 vim.keymap.set("v", "<leader>\"", "di\"\"<Esc>p")
 vim.keymap.set("v", "<leader>'", "di''<Esc>p")
+
+--Run usual build script, build.bat on windows, build on linux
+vim.keymap.set("n", "<leader>b", ":!build.bat<cr>")
+--vim.keymap.set("n", "<leader>b", ":!./build<cr>")
 
 vim.keymap.set("n", "<leader>ss", ":ClangdSwitchSourceHeader<Enter>")
 
